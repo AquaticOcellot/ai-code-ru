@@ -131,9 +131,10 @@ function setupCodeSample(sample) {
   input.addEventListener("scroll", () => {
     const overlay = sample.querySelector("[data-code-overlay]");
     const linesEl = sample.querySelector("[data-code-lines]");
-    const offset = input.scrollTop;
-    overlay.style.transform = `translateY(-${offset}px)`;
-    linesEl.style.transform = `translateY(-${offset}px)`;
+    const offsetY = input.scrollTop;
+    const offsetX = input.scrollLeft;
+    overlay.style.transform = `translate(-${offsetX}px, -${offsetY}px)`;
+    linesEl.style.transform = `translateY(-${offsetY}px)`;
   });
   resetButton.addEventListener("click", () => {
     input.value = sample.dataset.baseline;
@@ -145,7 +146,6 @@ function setupCodeSample(sample) {
 }
 
 function setupQuiz(quiz) {
-  console.log(quiz)
   const items = quiz.querySelectorAll("[data-quiz-item]");
   const checkButton = quiz.querySelector("[data-quiz-check]");
   const resetButton = quiz.querySelector("[data-quiz-reset]");
@@ -167,7 +167,6 @@ function setupQuiz(quiz) {
 
   checkButton.addEventListener("click", () => {
     let score = 0;
-    let answered = 0;
 
     items.forEach((item) => {
       const correct = item.dataset.correct;
@@ -175,7 +174,6 @@ function setupQuiz(quiz) {
 
       const selected = item.querySelector('input[type="radio"]:checked');
       if (selected) {
-        answered += 1;
         if (selected.value === correct) {
           score += 1;
         }
@@ -202,6 +200,8 @@ function showModule(index) {
   moduleCards.forEach((card, cardIndex) => {
     card.hidden = cardIndex !== currentModuleIndex;
   });
+
+  window.scrollTo(0, 0);
 }
 
 function moveModule(delta) {

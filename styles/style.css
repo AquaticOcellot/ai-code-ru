@@ -19,6 +19,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(138, 90, 68, 0.14), transparent 32%),
     linear-gradient(180deg, #fbf7f0 0%, var(--bg) 100%);
@@ -79,18 +80,45 @@ h2 {
   gap: 1rem;
 }
 
+.content > * {
+  min-width: 0;
+}
+
 .module-card {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--panel);
   box-shadow: var(--shadow);
   padding: 1.5rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .module-card p,
 .module-card li {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.module-card h1,
+.module-card h2,
+.module-card h3,
+.module-card p,
+.module-card li,
+.module-card blockquote,
+.module-card td,
+.module-card th {
+  overflow-wrap: anywhere;
+}
+
+.module-card pre,
+.module-card table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.module-card pre {
+  white-space: pre-wrap;
 }
 
 .code-sample {
@@ -125,7 +153,7 @@ h2 {
 
 .code-sample__editor {
   display: grid;
-  grid-template-columns: 3.25rem 1fr;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
   min-height: 180px;
 }
 
@@ -147,6 +175,7 @@ h2 {
 
 .code-sample__viewport {
   position: relative;
+  min-width: 0;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
 }
@@ -161,9 +190,10 @@ h2 {
   tab-size: 2;
   white-space: pre;
   overflow-wrap: normal;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow: hidden;
   min-height: 180px;
+  min-width: 100%;
+  width: max-content;
 }
 
 .code-sample__overlay {
@@ -171,6 +201,7 @@ h2 {
   color: #e5e7eb;
   z-index: 1;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .code-sample__overlay::-webkit-scrollbar {
@@ -187,6 +218,9 @@ h2 {
   caret-color: #fbbf24;
   resize: none;
   scrollbar-width: thin;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .code-sample__input::selection {
@@ -369,7 +403,81 @@ h2 {
 }
 
 @media (max-width: 800px) {
+  .hero {
+    padding: 1.25rem 0.75rem 0.5rem;
+  }
+
+  .hero__content,
+  .layout {
+    max-width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .module-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .module-card {
+    min-width: 0;
+  }
+
+  .module-card pre,
+  .module-card table {
+    font-size: 0.9rem;
+  }
+
+  .code-sample__editor {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+  }
+
+  .code-sample__gutter {
+    padding-left: 0.4rem;
+    padding-right: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  .code-sample__overlay,
+  .code-sample__input {
+    padding: 0.85rem 0.8rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    white-space: pre;
+    overflow-wrap: normal;
+    word-break: normal;
+    overflow-x: auto;
+  }
+
+  .code-sample__input {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .code-sample__line {
+    min-height: 1.45em;
+  }
+
+  .quiz {
+    margin-top: 1rem;
+    padding: 0.9rem;
+    border-radius: 16px;
+  }
+
+  .quiz__item {
+    padding: 0.75rem;
+  }
+
+  .quiz__option {
+    padding: 0.65rem 0.7rem;
+  }
+
   .edge-nav {
-    width: 20vw;
+    width: 14vw;
+    min-width: 40px;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .edge-nav {
+    opacity: 0.85;
   }
 }

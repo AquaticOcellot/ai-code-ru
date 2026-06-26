@@ -525,9 +525,13 @@ body[data-nav-end="true"] .module-card > div:last-of-type::after {
   }
 
   .module-card > div:last-of-type::after {
-    right: 0.75rem;
-    bottom: 0.65rem;
-    font-size: 0.85rem;
+    position: static;
+    display: block;
+    margin-top: 0.8rem;
+    text-align: right;
+    white-space: normal;
+    font-size: 0.8rem;
+    line-height: 1.2;
   }
 
   h1 {

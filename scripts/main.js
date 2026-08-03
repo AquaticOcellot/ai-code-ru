@@ -180,7 +180,7 @@ function setupQuiz(quiz) {
       }
     });
 
-    result.textContent = `Score: ${score} / ${items.length}`;
+    result.textContent = `Правильных ответов: ${score} / ${items.length}`;
     result.className = score === items.length ? "quiz__result is-correct" : "quiz__result is-wrong";
   });
 
@@ -196,16 +196,24 @@ function setupQuiz(quiz) {
 }
 
 function showModule(index) {
-  currentModuleIndex = (index + moduleCards.length) % moduleCards.length;
+  const maxIndex = moduleCards.length - 1;
+  currentModuleIndex = Math.max(0, Math.min(index, maxIndex));
   moduleCards.forEach((card, cardIndex) => {
     card.hidden = cardIndex !== currentModuleIndex;
   });
+
+  document.body.dataset.navStart = currentModuleIndex === 0 ? "true" : "false";
+  document.body.dataset.navEnd = currentModuleIndex === maxIndex ? "true" : "false";
 
   window.scrollTo(0, 0);
 }
 
 function moveModule(delta) {
-  showModule(currentModuleIndex + delta);
+  const nextIndex = currentModuleIndex + delta;
+  if (nextIndex < 0 || nextIndex >= moduleCards.length) {
+    return;
+  }
+  showModule(nextIndex);
 }
 
 document.addEventListener("click", (event) => {
@@ -218,6 +226,8 @@ document.addEventListener("click", (event) => {
     moveModule(1);
   }
 });
+
+showModule(0);
 
 codeSamples.forEach(setupCodeSample);
 quizzes.forEach(setupQuiz);

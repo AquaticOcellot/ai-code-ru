@@ -3,22 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Код + ИИ</title>
+  <title>5 шагов к осознанной работе с ИИ-кодом</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <header class="hero">
     <div class="hero__content">
       <p class="eyebrow centered">Мини-Курс</p>
-      <h1 class="centered">Код + ИИ для начинающих</h1>
-      <p class="hero__lead"></p>
+      <h1 class="centered">5 шагов к осознанной работе с ИИ-кодом</h1>
     </div>
   </header>
   <main class="layout">
     <section class="content">
       <article class="module-card" id="module-1">
+          <div>
+              <h1 class="centered">Введение</h1>
+              <p>В этом мини-курсе мы разберём ключевые компетенции, которые абсолютно необходимы современному разработчику, использующему ИИ.
+                  Пройдя курс, вы сможете принимать осознанные инженерные решения: когда довериться ИИ, когда проверить, когда переписать, а когда вообще не использовать. <strong>Вам предстоит:</strong></p>
+              <ol>
+                  <li><h4>Понять механику.</h4>
+              Вы узнаете, как ИИ «мыслит» (на самом деле — нет), где он силён, а где неизбежно проваливается. Это избавит вас от иллюзий и ложных ожиданий.</li>
+                  <li><h4>Овладеть формулой промпта.</h4>
+              Получите чёткую, работающую структуру запроса, которая даёт код с первого раза, а не после десятка уточнений.
+                  <li><h4>Научиться проверять и исправлять.</h4>
+              Освоите жёсткий чек-лист, который не даст проскочить ни одной галлюцинации или скрытой ошибке. Код от ИИ не попадёт в продакшен без вашего контроля.
+                  <li><h4>Увидеть риски.</h4>
+              Познакомитесь с главными угрозами: утечка секретов, лицензионная нечистота, «автоматизационная самоуспокоенность». Научитесь их распознавать и блокировать.
+                  <li><h4>Закрепить на практике.</h4>
+              Финальное задание объединит все навыки. Вы напишете промпт, получите код, проверите его по чек-листу и доведёте до рабочего состояния — как в реальном проекте.
+              </ol>
+              <p>Алгоритм освоения курса: читаете краткую теорию, решаете предложенные задачи, проходите короткий тест на усвоение этого модуля. Затем переходите к следующему модулю (с помощью боковой стрелки) и повторяете этот алгоритм. В конце курса вы выполните финальное задание.</p>
+          </div>
         <div class="article-content">
-          <h1 class="centered">ИИ‑ассистент в разработке: Как он работает и когда ему нельзя доверять</h1>
+          <h1 class="centered">1. ИИ‑ассистент в разработке: Как он работает и когда ему нельзя доверять</h1>
           <p>Представьте себе стажера, который прочитал миллиард строк кода, но не понимает, что такое «память» или «логика». Он гениально копирует стиль, но не осознает смысл. Именно так работает современный генеративный ИИ.</p>
           <p>В этой статье мы разберем механику мышления (или его отсутствия) у ИИ, научимся распознавать «уверенную ложь» и четко определим, где ИИ — ваш лучший друг, а где — худший враг.</p>
           <hr>
@@ -39,7 +56,7 @@
           <h3>Классический пример галлюцинации</h3>
           <p>Представьте, что вы просите ИИ на Java:</p>
           <blockquote>
-            <p>«Используй метод <code>getOrCreateCompletableFuture</code> для управления таймаутами»</p>
+            <p>«Используй метод <code>getOrCreateCompletableFuture</code> для управления тайм-аутами»</p>
           </blockquote>
           <p>ИИ, не найдя в своей «памяти» такого метода, но зная структуру именования в Java (глагол + существительное), <strong>придумает</strong> его. Он сгенерирует пример:</p>
           <pre><code>// ВАУ! Код выглядит идеально!
@@ -112,7 +129,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
           <p><strong>Ответ:</strong> Нет. ИИ мог просто предположить, что такой метод «звучит логично». Всегда проверяйте документацию или автодополнение (IntelliSense) вашей IDE, прежде чем запускать сгенерированный код в продакшене.</p>
         </div>
           <div class="exercise">
-              <h1 class="centered space_atop">Упражнение «Угадай результат»</h1>
+              <h1 class="centered">Упражнение «Угадай результат»</h1>
               <p>Ниже приведены 5 коротких задач, которые вы можете поставить перед ИИ-ассистентом. Для каждой задачи ответьте на два вопроса:</p>
               <ul>
                   <li>Справится ли ИИ <strong>хорошо</strong> (код будет рабочим, объяснение — точным) или <strong>плохо</strong> (галлюцинации, пропуски, ошибки)?</li>
@@ -148,7 +165,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
           </div>
         <div class="quiz" data-quiz data-quiz-id="module-1">
           <div class="quiz__header">
-            <h2 class="centered space_atop">Вопросы по модулю 1</h2>
+            <h2 class="centered">Вопросы по модулю 1</h2>
           </div>
           <div class="quiz__list" data-quiz-list>
               <div class="quiz__item" data-quiz-item data-correct="b">
@@ -209,7 +226,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
 
       <article class="module-card" id="module-2" hidden>
           <div class="module-theory">
-              <h1 class="centered">Искусство промпта — формула идеального запроса</h1>
+              <h1 class="centered">2. Искусство промпта — формула идеального запроса</h1>
               <p>Качество ответа ИИ напрямую зависит от качества вашего запроса (промпта). Плохо сформулированная задача — гарантия галлюцинаций или бесполезного кода. Хороший промпт — как точное техническое задание: он исключает двусмысленность.</p>
               <p>Мы предлагаем простую, но мощную формулу, которая работает для большинства задач программирования:</p>
               <div class="formula">
@@ -236,13 +253,13 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                   <li>Роль задаёт ожидание профессионального подхода (опытный разработчик не напишет «велосипед»).</li>
                   <li>Контекст уточняет предметную область (скидки, интернет-магазин) — ИИ будет использовать соответствующие названия переменных.</li>
                   <li>Задача сформулирована действием и конкретными условиями (отрицательные числа, пустые значения).</li>
-                  <li>Ограничение «только стандартная библиотека» отсекает попытки использовать `pandas` или `numpy` для простой арифметики.</li>
+                  <li>Ограничение «только стандартная библиотека» отсекает попытки использовать `pandas` или `NumPy` для простой арифметики.</li>
                   <li>Формат «код с короткими комментариями» даёт ответ, готовый к вставке, с пояснениями прямо в коде.</li>
               </ul>
               <h3>Чего не хватает в плохом промпте?</h3>
               <p>Сравните с неудачным вариантом:</p>
               <pre><code>Напиши функцию скидки.</code></pre>
-              <p>Такой промпт не даёт роли (ИИ может быть новичком), нет контекста (для чего скидка? интернет-магазин, такси, услуги?), задача размыта (какая логика скидки?), нет ограничений (можно использовать любые библиотеки) и формат не указан (ИИ выдаст просто код без пояснений). В результате вы получите примитивный код, который не впишется в ваш проект.</p>
+              <p>Такой промпт не даёт роли (ИИ может быть новичком), нет контекста (для чего скидка? Интернет-магазин, такси, услуги?), задача размыта (какая логика скидки?), нет ограничений (можно использовать любые библиотеки) и формат не указан (ИИ выдаст просто код без пояснений). В результате вы получите примитивный код, который не впишется в ваш проект.</p>
               <h3>Когда формула особенно важна?</h3>
               <ul>
                   <li>При работе с редкими или новыми библиотеками — ограничения уберегают от галлюцинаций.</li>
@@ -254,7 +271,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
               <p><em>В следующем разделе мы закрепим эту формулу на практике — вы увидите, как один и тот же запрос с разными параметрами даёт совершенно разный результат.</em></p>
           </div>
           <div>
-              <h1 class="centered space_atop">Примеры применения формулы РКТОФ</h1>
+              <h1 class="centered">Примеры применения формулы РКТОФ</h1>
               <p>Ниже разобраны четыре реальные задачи. Для каждой показан <strong>плохой</strong> промпт (без формулы) и <strong>хороший</strong> промпт (по формуле РКТОФ) с объяснением, почему хороший работает лучше.</p>
               <hr>
               <h3>Пример 1. Написание SQL-запроса</h3>
@@ -329,7 +346,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
           </div>
         <div class="quiz" data-quiz data-quiz-id="module-2">
           <div class="quiz__list" data-quiz-list>
-              <h2 class="centered space_atop">Тест по модулю 2: Формула идеального промпта</h2>
+              <h2 class="centered">Тест по модулю 2: Формула идеального промпта</h2>
               <p>Проверьте, как вы усвоили структуру РКТОФ (Роль → Контекст → Задача → Ограничения → Формат).</p>
               <div class="quiz__item" data-quiz-item data-correct="c">
                   <div class="quiz__prompt">Вопрос 1. Какой элемент формулы РКТОФ помогает защититься от галлюцинаций, связанных с использованием неподходящих библиотек или новых версий языка?</div>
@@ -388,7 +405,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
       </article>
       <article class="module-card" id="module-3" hidden>
           <div class="module-theory">
-              <h1 class="centered">Проверяем и доводим код до рабочего состояния</h1>
+              <h1 class="centered">3. Проверяем и доводим код до рабочего состояния</h1>
               <p>Вы написали идеальный промпт, получили красивый ответ, скопировали код... и он не работает. Или работает, но не так, как надо. Знакомая ситуация? Самый опасный момент в работе с ИИ — это доверие без проверки. Генеративный ИИ не тестирует код, не запускает его и не знает вашего окружения. Поэтому <strong>главное правило</strong> звучит так:</p>
               <div class="rule">
                   <p><strong>Никогда не вставляйте код от ИИ в проект без проверки.</strong></p>
@@ -403,7 +420,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                   <li><strong>2. Нет ли вызовов методов/функций, которых я не знаю — проверил ли я их существование?</strong><br>
                       Это защита от галлюцинаций. ИИ мог придумать метод, который звучит логично, но его нет в библиотеке. Проверьте все незнакомые методы в документации или через автодополнение вашей IDE (IntelliSense). Если метод подсвечен красным или его нет в документации — это галлюцинация. Замените или удалите такой вызов.</li>
                   <li><strong>3. Обработаны ли пустые значения, ошибки, «пограничные» случаи?</strong><br>
-                      ИИ часто пишет код для «счастливого пути» (happy path). Он забывает про `null`, пустые списки, отрицательные числа, нулевые делители, таймауты сети. Проверьте, есть ли проверки на крайние случаи. Если нет — добавьте их сами или попросите ИИ дополнить код.</li>
+                      ИИ часто пишет код для «счастливого пути» (happy path). Он забывает про `null`, пустые списки, отрицательные числа, нулевые делители, тайм-ауты сети. Проверьте, есть ли проверки на крайние случаи. Если нет — добавьте их сами или попросите ИИ дополнить код.</li>
                   <li><strong>4. Понимаю ли я, как этот код работает, своими словами?</strong><br>
                       Если вы не можете объяснить код коллеге без запинки — вы не должны его вставлять. Непонятный код — источник будущих багов. Если вы не понимаете строку, значит, вы не сможете её поддерживать. Этот пункт — самый важный. Он превращает вас из «пользователя ИИ» в «разработчика, который контролирует процесс».</li>
               </ul>
@@ -437,7 +454,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
               <hr>
               <p><strong>Запомните:</strong> ИИ — ассистент, а не замена вашему мышлению. Проверка — это не недоверие, это профессиональная привычка.</p>
           </div>
-          <h1 class="centered space_atop">Некорректно составленный ИИ код</h1>
+          <h1 class="centered">Некорректно составленный ИИ код</h1>
           <p>Проанализируйте код и исправьте найденные в нём ошибки <button onclick="toggleVisibility('m3_h1')">Показать ошибки</button></p>
           <div class="code-sample" data-code-sample>
               <div class="code-sample__header">
@@ -448,19 +465,21 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                   <div class="code-sample__gutter" aria-hidden="true" data-code-lines></div>
                   <div class="code-sample__viewport">
                       <div class="code-sample__overlay" aria-hidden="true" data-code-overlay></div>
-                      <textarea class="code-sample__input" data-code-input spellcheck="false">function calculateAverage(arr) {
-    // Посчитать среднее значение
-    var sum = 0;
-    if (typeof arr === 'array') {
-        for (var i = 0; i <= arr.length; i++) {
-            sum += arr[i];
-        }
-        var average = sum / arr.length;
-        return Math.round(average * 100) / 100;
-    } else {
-        return 0;
-    }
+                      <label>
+<textarea class="code-sample__input" data-code-input spellcheck="false">function calculateAverage(arr) {
+// Посчитать среднее значение
+var sum = 0;
+if (typeof arr === 'array') {
+for (var i = 0; i <= arr.length; i++) {
+sum += arr[i];
+}
+var average = sum / arr.length;
+return Math.round(average * 100) / 100;
+} else {
+return 0;
+}
 }</textarea>
+                      </label>
                   </div>
               </div>
           </div>
@@ -485,24 +504,26 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                       <div class="code-sample__gutter" aria-hidden="true" data-code-lines></div>
                       <div class="code-sample__viewport">
                           <div class="code-sample__overlay" aria-hidden="true" data-code-overlay></div>
-                          <textarea class="code-sample__input" data-code-input spellcheck="false">function calculateAverage(arr) {
-    // Проверяем, что передан именно массив и он не пуст
-    if (!Array.isArray(arr) || arr.length === 0) {
-        return NaN; // явно сигнализируем о некорректных данных
-    }
+                          <label>
+<textarea class="code-sample__input" data-code-input spellcheck="false">function calculateAverage(arr) {
+// Проверяем, что передан именно массив и он не пуст
+if (!Array.isArray(arr) || arr.length === 0) {
+return NaN; // явно сигнализируем о некорректных данных
+}
 
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        // Проверяем, что каждый элемент – число (и не NaN)
-        if (typeof arr[i] !== 'number' || isNaN(arr[i])) {
-            return NaN;
-        }
-        sum += arr[i];
-    }
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+// Проверяем, что каждый элемент – число (и не NaN)
+if (typeof arr[i] !== 'number' || isNaN(arr[i])) {
+return NaN;
+}
+sum += arr[i];
+}
 
-    const average = sum / arr.length;
-    return Math.round(average * 100) / 100;
+const average = sum / arr.length;
+return Math.round(average * 100) / 100;
 }</textarea>
+                          </label>
                       </div>
                   </div>
               </div>
@@ -510,7 +531,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
       </article>
         <article class="module-card" id="module-4" hidden>
             <div class="module-theory">
-                <h1 class="centered">Типичные ошибки и безопасность</h1>
+                <h1 class="centered">4. Типичные ошибки и безопасность</h1>
                 <p>К этому моменту вы уже умеете писать хорошие промпты и проверять код. Но есть ещё один слой рисков, который лежит за пределами синтаксиса и логики. Это <strong>безопасность</strong> и <strong>культура использования</strong> ИИ. Ошибки здесь стоят дороже всего: от утечки данных до юридических проблем. В этом модуле разберём четыре главные опасности и научимся их избегать.</p>
                 <hr>
                 <h3>1. Никогда не вставляйте в промпт пароли, API-ключи, личные данные клиентов</h3>
@@ -556,7 +577,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                 <p><strong>Итог:</strong> Безопасность и критическое мышление — это навыки, которые отличают профессионального разработчика от любителя. ИИ — это мощный инструмент, но он не знает ваших секретов, не заботится о лицензиях и не чувствует ответственности за продакшен. Вся ответственность лежит на вас. Проверяйте, сомневайтесь, тестируйте — и тогда ИИ станет вашим надёжным помощником, а не источником проблем.</p>
             </div>
             <div class="bad-prompts">
-                <h1 class="centered space_atop">Примеры промптов с ошибками и их разбор</h1>
+                <h1 class="centered">Примеры промптов с ошибками и их разбор</h1>
                 <p>Ниже приведены пять промптов, каждый из которых нарушает одно или несколько правил безопасности и культуры работы с ИИ. Прочитайте промпт, а затем разбор проблем — это поможет вам избегать подобных ошибок.</p>
                 <hr>
                 <h3>Промпт №1. Секреты в открытую</h3>
@@ -608,7 +629,7 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
             </div>
         </article>
         <article class="module-card" id="module-5" hidden>
-            <h1 class="centered">Финальное задание</h1>
+            <h1 class="centered">5. Финальное задание</h1>
             <p>Используя полученные навыки, создайте JavaScript функцию, которая получает данные в формате JSON</p>
             <ul>
                 <li>Напишите промпт по формуле из Модуля 2</li>
@@ -625,7 +646,9 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                     <div class="code-sample__gutter" aria-hidden="true" data-code-lines></div>
                     <div class="code-sample__viewport">
                         <div class="code-sample__overlay" aria-hidden="true" data-code-overlay></div>
-                        <textarea class="code-sample__input" data-code-input spellcheck="false"></textarea>
+                        <label>
+                            <textarea class="code-sample__input" data-code-input spellcheck="false"></textarea>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -639,25 +662,27 @@ CompletableFuture&lt;String&gt; future = CompletableFuture
                     <div class="code-sample__gutter" aria-hidden="true" data-code-lines></div>
                     <div class="code-sample__viewport">
                         <div class="code-sample__overlay" aria-hidden="true" data-code-overlay></div>
-                        <textarea class="code-sample__input" data-code-input spellcheck="false">async function fetchJSON(url) {
-    try {
-        const response = await fetch(url);
+                        <label>
+<textarea class="code-sample__input" data-code-input spellcheck="false">async function fetchJSON(url) {
+try {
+const response = await fetch(url);
 
-        if (!response.ok) {
-            throw new Error(`Ошибка HTTP! статус: ${response.status} – ${response.statusText}`);
-        }
+if (!response.ok) {
+throw new Error(`Ошибка HTTP! статус: ${response.status} – ${response.statusText}`);
+}
 
-        const data = await response.json();
-        return data;
+const data = await response.json();
+return data;
 
-    } catch (error) {
-        console.error('Запрос провалился для адреса', url, ':', error.message);
-        return null;
+} catch (error) {
+console.error('Запрос провалился для адреса', url, ':', error.message);
+return null;
 
-    } finally {
-        console.log('Попытка запроса завершена');
-    }
+} finally {
+console.log('Попытка запроса завершена');
+}
 }</textarea>
+                        </label>
                     </div>
                 </div>
             </div>
